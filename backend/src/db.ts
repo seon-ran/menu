@@ -1,4 +1,4 @@
-require("dotenv").config();
+import "dotenv/config";
 import { Client } from "pg";
 
 //接続された情報
