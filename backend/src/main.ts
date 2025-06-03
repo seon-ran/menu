@@ -6,14 +6,8 @@ import { connectDatabase, getCooksFromDb, CookRecord } from "./db.js";
 const app = express();
 const PORT = 3000;
 
-app.use(express.static("../client"));
-
 //POSTリクエストのボディをパースするためのミドルウェア
 app.use(express.json());
-
-app.get("/", (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "../client/index.html"));
-});
 
 app.get("/cook", async (req: Request, res: Response) => {
   try {
